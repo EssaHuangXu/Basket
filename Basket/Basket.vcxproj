@@ -11,13 +11,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Basket\Log.h" />
     <ClInclude Include="src\Basket\Application.h" />
     <ClInclude Include="src\Basket.h" />
     <ClInclude Include="src\Basket\BasketCore.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Basket\Log.cpp" />
     <ClCompile Include="src\Basket\Application.cpp" />
     <ClCompile Include="src\Basket\EntryPoint.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -66,6 +71,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>BK_PLATFORM_WINDOWS;BK_BUILD_DLL;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Basket\vendor\spdlog\include</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -80,6 +87,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>BK_PLATFORM_WINDOWS;BK_BUILD_DLL;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Basket\vendor\spdlog\include</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

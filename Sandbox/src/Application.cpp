@@ -1,5 +1,5 @@
 #include "Basket.h"
-#include "iostream"
+#include <iostream>
 
 class Sanbox : public Basket::Application 
 {
@@ -17,7 +17,11 @@ Basket::Application* Basket::CreateApplication()
 
 int main(int argc, char** argv)
 {
-	printf("Start Basket Engine!\n");
+	Basket::Log::Init();
+
+	BK_CORE_INFO("Start Basket Engine!");
+	BK_CLIENT_INFO("Client Start! {0}", 1);
+
 	auto app = Basket::CreateApplication();
 	app->Run();
 	delete app;
